@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CategoryRepo.cs" />
     <Compile Include="Gym.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
