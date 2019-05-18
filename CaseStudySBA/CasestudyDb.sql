@@ -10,6 +10,16 @@ create table Workout_Category
 category_id int identity primary key,
 category_name varchar(64)
 )
+
+insert into Workout_Category values('Jogging')
+insert into Workout_Category values('Sprint')
+insert into Workout_Category values('Cardio')
+insert into Workout_Category values('Slow Walk')
+insert into Workout_Category values('Aerobics')
+insert into Workout_Category values('Yoga')
+
+select * From Workout_Category
+
  
 create table Workout_Collection
 (

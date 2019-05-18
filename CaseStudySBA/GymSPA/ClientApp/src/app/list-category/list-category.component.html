@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table  border="1">
+        <tr>
+          <th>ID </th>
+          <th> Name</th>
+        </tr>
+        <tr *ngFor="let cat of category">
+          <td>{{cat.category_id}}</td>
+          <td>{{cat.category_name}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
