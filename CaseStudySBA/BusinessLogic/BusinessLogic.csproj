@@ -51,40 +51,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryRepo.cs" />
-    <Compile Include="Gym.Context.cs">
+    <Compile Include="GymTrack.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Gym.Context.tt</DependentUpon>
+      <DependentUpon>GymTrack.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Gym.cs">
+    <Compile Include="GymTrack.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Gym.tt</DependentUpon>
+      <DependentUpon>GymTrack.tt</DependentUpon>
     </Compile>
-    <Compile Include="Gym.Designer.cs">
+    <Compile Include="GymTrack.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Gym.edmx</DependentUpon>
+      <DependentUpon>GymTrack.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Workout_Active.cs">
-      <DependentUpon>Gym.tt</DependentUpon>
+      <DependentUpon>GymTrack.tt</DependentUpon>
     </Compile>
     <Compile Include="Workout_Category.cs">
-      <DependentUpon>Gym.tt</DependentUpon>
+      <DependentUpon>GymTrack.tt</DependentUpon>
     </Compile>
     <Compile Include="Workout_Collection.cs">
-      <DependentUpon>Gym.tt</DependentUpon>
+      <DependentUpon>GymTrack.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Gym.edmx">
+    <EntityDeploy Include="GymTrack.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Gym.Designer.cs</LastGenOutput>
+      <LastGenOutput>GymTrack.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Gym.edmx.diagram">
-      <DependentUpon>Gym.edmx</DependentUpon>
+    <None Include="GymTrack.edmx.diagram">
+      <DependentUpon>GymTrack.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -92,15 +92,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Gym.Context.tt">
+    <Content Include="GymTrack.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Gym.edmx</DependentUpon>
-      <LastGenOutput>Gym.Context.cs</LastGenOutput>
+      <DependentUpon>GymTrack.edmx</DependentUpon>
+      <LastGenOutput>GymTrack.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Gym.tt">
+    <Content Include="GymTrack.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Gym.edmx</DependentUpon>
-      <LastGenOutput>Gym.cs</LastGenOutput>
+      <DependentUpon>GymTrack.edmx</DependentUpon>
+      <LastGenOutput>GymTrack.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
