@@ -17,7 +17,20 @@ export class CategoryService {
     return this.http.get<Category[]>(this._url);
   }
 
+  getById(id: string): Observable<Category> {
+    return this.http.get<Category>(this._url + `/${id}`);
+  }
+
   save(cat: Category) {
     return this.http.post(this._url, cat);
   }
+
+  update(cat: Category) {
+    return this.http.put(this._url, cat);
+  }
+
+  delete(id: string) {
+    return this.http.delete<Category>(this._url + `/${id}`);
+  }
+
 }

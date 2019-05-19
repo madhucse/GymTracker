@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -11,6 +11,10 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ListCategoryComponent } from './list-category/list-category.component';
 import { CategoryService } from './category.service';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { FindCategoryComponent } from './find-category/find-category.component';
+import { DeleteCategoryComponent } from './delete-category/delete-category.component';
 
 
 
@@ -22,19 +26,29 @@ import { CategoryService } from './category.service';
     CounterComponent,
     FetchDataComponent,
     ListCategoryComponent,
+    AddCategoryComponent,
+    EditCategoryComponent,
+    FindCategoryComponent,
+    DeleteCategoryComponent,
   
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'list-Category', component:ListCategoryComponent },
+      { path: 'delete-Category/:id', component: DeleteCategoryComponent},
+      { path: 'add-Category', component: AddCategoryComponent},
+      { path: 'edit-Category/:id', component: EditCategoryComponent},
+      { path: 'find-Category', component: FindCategoryComponent },
+      {path:'',redirectTo:'list-Category',pathMatch:'full'}
     ])
   ],
   providers: [CategoryService],
-  bootstrap: [ListCategoryComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

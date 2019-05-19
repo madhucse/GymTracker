@@ -88,6 +88,25 @@ namespace BusinessLogic
             }
 
         }
+
+        public Workout_Category Get(int id)
+        {
+            Workout_Category objCat = null;
+
+            try
+            {
+                objCat = (from obj in ObjContext.Workout_Category
+                          where obj.category_id == id
+                          select obj).First();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return objCat;
+
+        }
     }
 
 }

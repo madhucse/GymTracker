@@ -26,7 +26,7 @@ namespace Service.Controllers
                 return StatusCode(HttpStatusCode.Created);
             }
             {
-                return BadRequest("Not Exist");
+                return BadRequest("Failed Add Workout Category");
             }
 
         }
@@ -41,7 +41,7 @@ namespace Service.Controllers
             }
             else
             {
-                return BadRequest("Not Exist");
+                return BadRequest("Failed to Update Workout Category");
             }
 
         }
@@ -63,6 +63,12 @@ namespace Service.Controllers
             {
                 return BadRequest("Not Found");
             }
+        }
+
+        public IHttpActionResult Get(int? id)
+        {
+            var data = objcontext.Workout_Category.Find(id);
+            return Ok(data);
         }
     }
 }

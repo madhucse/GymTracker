@@ -1,10 +1,32 @@
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <ul class="navbar-nav">
+    <li class="navbar-item">
+      <a [routerLink]="['/list-Category']" class="nav-link" routerLinkActive="active">List Category</a>
+    </li>
+
+    <li class="navbar-item">
+      <a [routerLink]="['/add-Category']" class="nav-link" routerLinkActive="active">Add Category</a>
+    </li>
+
+  </ul>
+</nav>
+
 <div class='container-fluid'>
   <div class='row'>
-    <div class='col-sm-3'>
-      <app-nav-menu></app-nav-menu>
-    </div>
-    <div class='col-sm-9 body-content'>
-      <router-outlet></router-outlet>
+    <div class='col-md-12'>
+        <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
