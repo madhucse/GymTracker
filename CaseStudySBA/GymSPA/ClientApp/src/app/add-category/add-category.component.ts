@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder, FormControl,Validator, Validators } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl, Validator, Validators, NgForm } from '@angular/forms';
+import { CategoryService } from '../category.service';
+import { Category } from '../Category';
 
 @Component({
   selector: 'app-add-category',
@@ -9,16 +11,24 @@ import { FormGroup,FormBuilder, FormControl,Validator, Validators } from '@angul
 export class AddCategoryComponent implements OnInit {
 
   frmCat: FormGroup;
-  constructor(private fb:FormBuilder) { }
+  @Output() CategoryAdded = new EventEmitter<string>();
+  constructor(private fb: FormBuilder, private service: CategoryService) { }
 
   ngOnInit() {
     this.frmCat = this.fb.group({
-      category_id: new FormControl('',Validators.required),
-      category_name:new FormControl('',[Validators.required,Validators.minLength(3)])
+      category_name: new FormControl('', [Validators.required, Validators.minLength(3)])
     });
   }
 
   get f() {
     return this.frmCat.controls;
   }
+
+  saveForm(frm: NgForm) {
+    if (frm.valid) {
+      this.CategoryAdded.emit(frm.value.category_name);
+    }
+  }
+
+
 }

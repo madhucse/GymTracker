@@ -19,4 +19,12 @@ export class ListCategoryComponent implements OnInit {
     );
 
   }
+
+  SaveCategory($event) {
+    console.log($event);
+    this.service.save(new Category(0, $event)).subscribe(
+      (data) => alert('Added'),
+      (error) => alert('Failed to add')
+    );
+  }
 }

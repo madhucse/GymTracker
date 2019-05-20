@@ -1,26 +1,24 @@
-<form novalidate [formGroup]="frmCat">
-  <div class="form-group col-md-4">
-    <label for="">Enter Id</label>
-    <input type="number" name="category_id" id="category_id" formControlName="category_id" class="form-control" />
-    <div *ngIf="f.category_id.invalid && f.category_id.dirty&&f.category_id.error?.required" class="invalid-feedback">
-      category_id is required
-    </div>
-  </div>
+<form novalidate [formGroup]="frmCat" class="form-inline" (ngSubmit)="saveForm(frmCat)">
+  
 
   <div class="form-group col-md-4">
-    <label for="">Enter Name</label>
-    <input type="text" name="category_name" id="category_name" formControlName="category_name" class="form-control" />
+
+    <input type="text" name="category_name" id="category_name" formControlName="category_name" class="form-control" [ngClass]="{'is-valid':f.category_name.valid,'is-invalid':f.category_name.invalid &&f.category_name.dirty}" placeholder="Category Name" />
     <div *ngIf="f.category_name.invalid && f.category_name.dirty&&f.category_name.error?.required" class="invalid-feedback">
-      category_id is required
+      category_name is required
+    
     </div>
+    <br/>
+    <button type="submit" [disabled]="!frmCat.valid" class="btn btn-success">Save</button>
+
     <div *ngIf="f.category_name.invalid && f.category_name.dirty&&f.category_name.error?.minLength" class="invalid-feedback">
       minimum 3 Characters are Required
     </div>
+
+  
+
   </div>
 
-  <div class="form-group col-md-12">
-    <button type="submit" class="btn btn-success btn-lg" >Save</button>
-    <a [routerLink]="['/list-Category']" class="btn btn-primary btn-lg ml-3">Back to List</a>
-  </div>
-
+  
 </form>
+

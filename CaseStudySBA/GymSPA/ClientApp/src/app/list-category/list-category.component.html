@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <app-add-category (CategoryAdded)="SaveCategory($event)"></app-add-category>
+    </div>
+    <div class="col-md-12">
       <table>
         <tr>
           <th>ID </th>

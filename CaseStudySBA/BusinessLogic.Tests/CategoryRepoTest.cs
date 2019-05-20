@@ -15,7 +15,7 @@ namespace BusinessLogic.Tests
         public void GetAllTest()
         {
             var obj = new CategoryRepo();
-            int Expected =0;
+            int Expected =6;
             int Actual = obj.GetAll().Count();
             Assert.AreEqual(Expected, Actual);
 
