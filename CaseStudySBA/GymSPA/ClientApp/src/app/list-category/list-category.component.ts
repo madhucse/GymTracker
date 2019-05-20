@@ -14,7 +14,7 @@ export class ListCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.service.getAll().subscribe(
-      (data) => this.category = data,
+      (data) => { this.category = data; console.log(data); },
       (error) => alert('error processsing request')
     );
 
@@ -27,4 +27,6 @@ export class ListCategoryComponent implements OnInit {
       (error) => alert('Failed to add')
     );
   }
+
+  
 }

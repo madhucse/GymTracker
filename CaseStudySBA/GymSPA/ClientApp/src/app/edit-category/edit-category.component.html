@@ -1,3 +1,16 @@
-<p>
-  edit-category works!
-</p>
+<form novalidate [formGroup]="frmCat" class="form-inline">
+
+
+  <div class="form-group col-md-12">
+
+    <input type="text" name="category_name" id="category_name" formControlName="category_name" class="form-control" disabled [ngClass]="{'is-valid':f.category_name.valid,'is-invalid':f.category_name.invalid &&f.category_name.dirty}" placeholder="Category Name" />
+    <div *ngIf="f.category_name.invalid && f.category_name.dirty&&f.category_name.error?.required" class="invalid-feedback">
+      category_name is required
+    </div>
+
+    <button type="button" class="btn btn-primary " style="margin-left:5px" (click)="Enable()" [hidden]="click">Edit</button>
+    <button type="button" class="btn btn-success" style="margin-left:5px" (click)="Disable()" [hidden]="click">Update</button>
+    <button type="button" class="btn btn-danger" style="margin-left:5px">Delete</button>
+</div>
+
+</form>

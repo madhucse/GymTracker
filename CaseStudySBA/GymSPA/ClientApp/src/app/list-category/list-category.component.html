@@ -5,17 +5,12 @@
     </div>
     <div class="col-md-12">
       <table>
-        <tr>
-          <th>ID </th>
-          <th> Name</th>
-        </tr>
+        
         <tr *ngFor="let cat of category">
-          <td>{{cat.category_id}}</td>
-          <td>{{cat.category_name}}</td>
-          <td>
-            <a [routerLink]="['/edit-Category',cat.id]">Edit</a>
-            <a [routerLink]="['/delete-Category',cat.id]">delete</a>
-          </td>
+         
+           <app-edit-category [NameAdd]="cat" > </app-edit-category>
+         
+         
         </tr>
       </table>
     </div>

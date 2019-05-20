@@ -18,6 +18,7 @@ export class AddCategoryComponent implements OnInit {
     this.frmCat = this.fb.group({
       category_name: new FormControl('', [Validators.required, Validators.minLength(3)])
     });
+   
   }
 
   get f() {

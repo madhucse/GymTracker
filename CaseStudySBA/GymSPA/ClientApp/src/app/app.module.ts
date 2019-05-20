@@ -15,6 +15,7 @@ import { AddCategoryComponent } from './add-category/add-category.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { FindCategoryComponent } from './find-category/find-category.component';
 import { DeleteCategoryComponent } from './delete-category/delete-category.component';
+import { ListComponent } from './list/list.component';
 
 
 
@@ -30,12 +31,13 @@ import { DeleteCategoryComponent } from './delete-category/delete-category.compo
     EditCategoryComponent,
     FindCategoryComponent,
     DeleteCategoryComponent,
+    ListComponent,
   
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
-    FormsModule,
+   
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -43,8 +45,9 @@ import { DeleteCategoryComponent } from './delete-category/delete-category.compo
       { path: 'list-Category', component:ListCategoryComponent },
       { path: 'delete-Category/:id', component: DeleteCategoryComponent},
       { path: 'add-Category', component: AddCategoryComponent},
-      { path: 'edit-Category/:id', component: EditCategoryComponent},
+      { path: 'edit-Category', component: EditCategoryComponent},
       { path: 'find-Category', component: FindCategoryComponent },
+      {path:'list',component:ListComponent},
       {path:'',redirectTo:'list-Category',pathMatch:'full'}
     ])
   ],

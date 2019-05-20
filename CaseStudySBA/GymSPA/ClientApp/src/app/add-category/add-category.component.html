@@ -1,4 +1,4 @@
-<form novalidate [formGroup]="frmCat" class="form-inline" (ngSubmit)="saveForm(frmCat)">
+<form novalidate [formGroup]="frmCat" class="form-inline" >
   
 
   <div class="form-group col-md-4">
@@ -9,7 +9,7 @@
     
     </div>
     <br/>
-    <button type="submit" [disabled]="!frmCat.valid" class="btn btn-success">Save</button>
+    <button type="submit" [disabled]="!frmCat.valid" class="btn btn-success">+</button>
 
     <div *ngIf="f.category_name.invalid && f.category_name.dirty&&f.category_name.error?.minLength" class="invalid-feedback">
       minimum 3 Characters are Required

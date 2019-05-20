@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class CategoryService {
 
-  private _url = "http://localhost:63218/api/Category";
+  private _url = 'http://localhost:63218/api/Category';
 
   constructor(private http:HttpClient) { }
 

@@ -45,3 +45,7 @@ comment varchar(64),
 statuss bit
 )
 
+select * from Workout_Category
+
+alter table Workout_Cateogry
+drop category_name="null"

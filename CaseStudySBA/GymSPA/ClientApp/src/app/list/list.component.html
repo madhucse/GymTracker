@@ -1,0 +1,12 @@
+<form novalidate [formGroup]="frmCat" class="form-inline">
+
+
+  <div class="form-group col-md-8">
+    <input type="text" name="category_name" id="category_name" formControlName="category_name" class="form-control" />
+
+    <button type="button" (click)="changeText()" class="btn btn-success">{{text}}</button>
+    
+    <button type="button" class="btn btn-primary">Delete</button>
+  </div>
+ 
+</form>
