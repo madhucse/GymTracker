@@ -16,8 +16,9 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { FindCategoryComponent } from './find-category/find-category.component';
 import { DeleteCategoryComponent } from './delete-category/delete-category.component';
 import { ListComponent } from './list/list.component';
-import { WorkoutCollectionComponent } from './workout-collection/workout-collection.component';
 import { Filterpipe } from '../../Search';
+import { ListWorkoutComponent } from './list-workout/list-workout.component';
+import { AddWorkoutComponent } from './add-workout/add-workout.component';
 
 
 
@@ -35,8 +36,10 @@ import { Filterpipe } from '../../Search';
     FindCategoryComponent,
     DeleteCategoryComponent,
     ListComponent,
-    WorkoutCollectionComponent,
-    Filterpipe
+   
+    Filterpipe,
+    ListWorkoutComponent,
+    AddWorkoutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -52,7 +55,9 @@ import { Filterpipe } from '../../Search';
       { path: 'edit-Category', component: EditCategoryComponent},
       { path: 'find-Category', component: FindCategoryComponent },
       { path: 'list', component: ListComponent },
-      { path: 'workout-collection', component: WorkoutCollectionComponent },
+
+      { path: 'add-workout', component: AddWorkoutComponent },
+      { path: 'list-workout', component: ListWorkoutComponent },
       {path:'',redirectTo:'list-Category',pathMatch:'full'}
     ])
   ],

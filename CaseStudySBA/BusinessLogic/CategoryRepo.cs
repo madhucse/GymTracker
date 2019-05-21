@@ -73,11 +73,11 @@ namespace BusinessLogic
 
             try
             {
-                var ObjEmployee = (from obj in ObjContext.Workout_Category
+                var ObjCat = (from obj in ObjContext.Workout_Category
                                    where obj.category_id == item.category_id
                                    select obj).First();
 
-                ObjEmployee.category_name = item.category_name;
+                ObjCat.category_name = item.category_name;
                 ObjContext.SaveChanges();
 
             }

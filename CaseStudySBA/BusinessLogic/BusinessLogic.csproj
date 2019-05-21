@@ -67,6 +67,7 @@
       <DependentUpon>GymTrack.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkoutRepo.cs" />
     <Compile Include="Workout_Active.cs">
       <DependentUpon>GymTrack.tt</DependentUpon>
     </Compile>
