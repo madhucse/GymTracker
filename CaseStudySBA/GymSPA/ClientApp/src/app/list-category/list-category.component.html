@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-add-category (CategoryAdded)="SaveCategory($event)"></app-add-category>
+      <app-add-category (CategoryAdded)="SaveCategory($event)" ></app-add-category>
     </div>
     <div class="col-md-12">
       <table>
         
         <tr *ngFor="let cat of category">
          
-           <app-edit-category [NameAdd]="cat" > </app-edit-category>
+           <app-edit-category [NameAdd]="cat" (EditAdded)="EditCategory($event)"  (Deleted)="Delete($event)"> </app-edit-category>
          
          
         </tr>

@@ -14,7 +14,7 @@ export class ListCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.service.getAll().subscribe(
-      (data) => { this.category = data; console.log(data); },
+      (data) => this.category = data,
       (error) => alert('error processsing request')
     );
 
@@ -28,5 +28,18 @@ export class ListCategoryComponent implements OnInit {
     );
   }
 
-  
+  EditCategory($event) {
+      this.service.update($event).subscribe(
+      (data) => alert('Updated'),
+      (error) => alert('Failed to update'));
+    
+  }
+
+  Delete($event) {
+    this.service.delete($event.category_id).subscribe(
+      (data) => alert('deleted'),
+      (error) => alert('Failed to Delete'));
+
+    
+  }
 }

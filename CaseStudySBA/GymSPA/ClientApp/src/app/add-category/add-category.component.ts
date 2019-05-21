@@ -28,6 +28,7 @@ export class AddCategoryComponent implements OnInit {
   saveForm(frm: NgForm) {
     if (frm.valid) {
       this.CategoryAdded.emit(frm.value.category_name);
+      alert(frm.value.category_name);
     }
   }
 

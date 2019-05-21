@@ -47,5 +47,6 @@ statuss bit
 
 select * from Workout_Category
 
-alter table Workout_Cateogry
-drop category_name="null"
+delete from Workout_Category
+where category_id=13
+

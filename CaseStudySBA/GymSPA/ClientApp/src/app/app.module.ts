@@ -16,6 +16,7 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { FindCategoryComponent } from './find-category/find-category.component';
 import { DeleteCategoryComponent } from './delete-category/delete-category.component';
 import { ListComponent } from './list/list.component';
+import { WorkoutCollectionComponent } from './workout-collection/workout-collection.component';
 
 
 
@@ -32,12 +33,12 @@ import { ListComponent } from './list/list.component';
     FindCategoryComponent,
     DeleteCategoryComponent,
     ListComponent,
+    WorkoutCollectionComponent,
   
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
-   
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -47,7 +48,8 @@ import { ListComponent } from './list/list.component';
       { path: 'add-Category', component: AddCategoryComponent},
       { path: 'edit-Category', component: EditCategoryComponent},
       { path: 'find-Category', component: FindCategoryComponent },
-      {path:'list',component:ListComponent},
+      { path: 'list', component: ListComponent },
+      { path: 'workout-collection', component: WorkoutCollectionComponent },
       {path:'',redirectTo:'list-Category',pathMatch:'full'}
     ])
   ],
