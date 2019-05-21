@@ -1,0 +1,14 @@
+<form novalidate [formGroup]="frmCat" >
+  <div class="form-group ">
+    <input type="text" name="Title" id="Title" formControlName="Title" class="form-control" [ngClass]="{'is-valid':f.Title.valid,'is-invalid':f.Title.invalid &&f.Title.dirty}" />
+    <div *ngIf="f.Title.invalid && f.Title.dirty&&f.Title.error?.required" class="invalid-feedback">
+      Title is required
+    </div>
+  </div>
+<div class="  form-group form-inline">
+    <button type="button" class="btn btn-primary " style="margin-left:10px" (click)="saveForm(frmCat)">Edit</button>
+    <button type="button" class="btn btn-danger" style="margin-left:10px">Delete</button>
+    <button type="button" class="btn btn-success" style="margin-left:10px">Start</button>
+    <button type="button" class="btn btn-danger" style="margin-left:10px">End</button>
+  </div>
+</form>

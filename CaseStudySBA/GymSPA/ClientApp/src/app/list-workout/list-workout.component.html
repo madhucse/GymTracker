@@ -1,3 +1,15 @@
-<p>
-  list-workout works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Workout Tracker</h3>
+      <input type="text" class="form-control" name="search" [(ngModel)]="work" placeholder="Search here" />
+      <hr/>
+      <div *ngFor="let work of workout | filter: work">
+
+        <app-edit-workout [WorkoutAdd]="work" (EditWorkout)="Edited($event)"> </app-edit-workout>
+
+        <hr />
+      </div>
+    </div>
+
+ 

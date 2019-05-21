@@ -20,6 +20,7 @@ import { Filterpipe } from '../../Search';
 import { ListWorkoutComponent } from './list-workout/list-workout.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
 import { WorkoutService } from './workout.service';
+import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
 
 
 
@@ -40,7 +41,8 @@ import { WorkoutService } from './workout.service';
    
     Filterpipe,
     ListWorkoutComponent,
-    AddWorkoutComponent
+    AddWorkoutComponent,
+    EditWorkoutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -56,10 +58,11 @@ import { WorkoutService } from './workout.service';
       { path: 'edit-Category', component: EditCategoryComponent},
       { path: 'find-Category', component: FindCategoryComponent },
       { path: 'list', component: ListComponent },
-
+      { path: 'edit-workout', component: EditWorkoutComponent },
       { path: 'add-workout', component: AddWorkoutComponent },
       { path: 'list-workout', component: ListWorkoutComponent },
-      {path:'',redirectTo:'list-Category',pathMatch:'full'}
+      { path: '', redirectTo: 'list-Category', pathMatch: 'full' }
+
     ])
   ],
   providers: [CategoryService,WorkoutService],

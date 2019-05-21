@@ -67,8 +67,34 @@ namespace BusinessLogic
 
 
 
+        public void Edit(Workout_Collection item)
+        {
 
+            try
+            {
+                var ObjWork = (from obj in ObjContext.Workout_Collection
+                              where obj.workout_id == item.workout_id
+                              select obj).First();
+
+                ObjWork.workout_title = item.workout_title;
+                ObjWork.workout_note = item.workout_note;
+                ObjWork.calories_burn_per_min = item.calories_burn_per_min;
+                ObjWork.category_id = item.category_id;
+                ObjContext.SaveChanges();
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
+
+
+
+
+
+    }
     }
 

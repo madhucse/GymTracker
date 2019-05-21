@@ -30,7 +30,23 @@ namespace Service.Controllers
             }
 
         }
-     
+
+        public IHttpActionResult Put(Workout_Collection obj)
+        {
+            objcontext.Workout_Collection.Attach(obj);
+            objcontext.Entry(obj).State = System.Data.Entity.EntityState.Modified;
+            int NoOfRowsEffected = objcontext.SaveChanges();
+            if (NoOfRowsEffected > 0)
+            {
+                return StatusCode(HttpStatusCode.Accepted);
+            }
+            else
+            {
+                return BadRequest("Failed to Update Workout Category");
+            }
+
+        }
+
 
         public IHttpActionResult Delete(int id)
         {
