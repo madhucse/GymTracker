@@ -17,6 +17,8 @@ import { FindCategoryComponent } from './find-category/find-category.component';
 import { DeleteCategoryComponent } from './delete-category/delete-category.component';
 import { ListComponent } from './list/list.component';
 import { WorkoutCollectionComponent } from './workout-collection/workout-collection.component';
+import { Filterpipe } from '../../Search';
+
 
 
 
@@ -34,11 +36,12 @@ import { WorkoutCollectionComponent } from './workout-collection/workout-collect
     DeleteCategoryComponent,
     ListComponent,
     WorkoutCollectionComponent,
-  
+    Filterpipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },

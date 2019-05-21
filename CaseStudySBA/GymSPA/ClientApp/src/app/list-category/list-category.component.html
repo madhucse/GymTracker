@@ -1,18 +1,23 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <app-add-category (CategoryAdded)="SaveCategory($event)" ></app-add-category>
+    <div class="col-md-3">
+      <h3>Add Category</h3>
+
+      <app-add-category (CategoryAdded)="SaveCategory($event)"></app-add-category>
+      <hr/>
+      <input type="text" class="form-control" name="search" [(ngModel)]="cat" placeholder="Search here" />
+      <hr/>
     </div>
+     
+   
     <div class="col-md-12">
-      <table>
-        
-        <tr *ngFor="let cat of category">
-         
-           <app-edit-category [NameAdd]="cat" (EditAdded)="EditCategory($event)"  (Deleted)="Delete($event)"> </app-edit-category>
-         
-         
-        </tr>
-      </table>
+
+        <div *ngFor="let cat of category | filter: cat">
+
+          <app-edit-category [NameAdd]="cat" (EditAdded)="EditCategory($event)" (Deleted)="Delete($event)"> </app-edit-category>
+
+          <hr/>
+        </div>
     </div>
   </div>
 </div>

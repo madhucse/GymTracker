@@ -8,7 +8,7 @@ import { Category } from '../Category';
   styleUrls: ['./list-category.component.css']
 })
 export class ListCategoryComponent implements OnInit {
-
+  cat: string = '';
   category: Category[];
   constructor(private service: CategoryService) { }
 

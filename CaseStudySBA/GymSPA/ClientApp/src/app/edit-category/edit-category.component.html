@@ -1,7 +1,7 @@
 <form novalidate [formGroup]="frmCat" class="form-inline" >
 
 
-  <div class="form-group col-md-12">
+  <div class="form-group">
 
     <input type="text" name="category_name" id="category_name" formControlName="category_name" class="form-control" disabled [ngClass]="{'is-valid':f.category_name.valid,'is-invalid':f.category_name.invalid &&f.category_name.dirty}" placeholder="Category Name" />
     <div *ngIf="f.category_name.invalid && f.category_name.dirty&&f.category_name.error?.required" class="invalid-feedback">
