@@ -50,3 +50,9 @@ select * from Workout_Category
 delete from Workout_Category
 where category_id=13
 
+
+select * from Workout_Collection
+
+insert into Workout_Collection values('mgjhfhfh','vasjvdjhasgdj',2,2)
+
+select * from Workout_Category

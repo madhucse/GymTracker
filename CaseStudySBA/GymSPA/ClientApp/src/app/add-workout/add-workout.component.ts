@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angula
 import { CategoryService } from '../category.service';
 import { Category } from '../Category';
 import { formControlBinding } from '@angular/forms/src/directives/ng_model';
+import { WorkoutService } from '../workout.service';
+import { Workout } from '../../../Workout';
 
 @Component({
   selector: 'app-add-workout',
@@ -13,14 +15,14 @@ export class AddWorkoutComponent implements OnInit {
   click: number = 0;
   frmCat: FormGroup;
   category: Category[];
-  constructor(private fb: FormBuilder, private service: CategoryService) { }
+  constructor(private fb: FormBuilder, private service: CategoryService, private service1:WorkoutService) { }
 
   ngOnInit() {
     this.frmCat = this.fb.group({
       Title: new FormControl('', [Validators.required, Validators.minLength(3)]),
       Note: new FormControl('', [Validators.required, Validators.minLength(80)]),
-      Calory: new FormControl(''),
-      Category:new FormControl('')
+      Calory: new FormControl('', [Validators.required]),
+      Category: new FormControl('', [Validators.required])
 
     });
 
@@ -49,9 +51,12 @@ export class AddWorkoutComponent implements OnInit {
 
   saveForm(frm: NgForm) {
     if (frm.valid) {
-     
-      console.log(frm.value);
-    }
+      let work = new Workout(frm.value.workout_title, frm.value.workout_note, frm.value.calory, frm.value.category_id, frm.value.workout_id);
+      this.service1.save(work).subscribe(
+        (data) => alert("Added"),
+        (error) => alert("failed to Add")
+      );
+   }
 
       
     }

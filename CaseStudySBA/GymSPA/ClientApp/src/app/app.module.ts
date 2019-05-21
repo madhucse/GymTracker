@@ -19,6 +19,7 @@ import { ListComponent } from './list/list.component';
 import { Filterpipe } from '../../Search';
 import { ListWorkoutComponent } from './list-workout/list-workout.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
+import { WorkoutService } from './workout.service';
 
 
 
@@ -61,7 +62,7 @@ import { AddWorkoutComponent } from './add-workout/add-workout.component';
       {path:'',redirectTo:'list-Category',pathMatch:'full'}
     ])
   ],
-  providers: [CategoryService],
+  providers: [CategoryService,WorkoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
