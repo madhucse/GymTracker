@@ -55,4 +55,13 @@ select * from Workout_Collection
 
 insert into Workout_Collection values('mgjhfhfh','vasjvdjhasgdj',2,2)
 
-select * from Workout_Category
+
+delete from Workout_Collection
+where workout_id=9
+
+insert into Workout_Collection values('Morning Run For 5 min','Running',2.0,2)
+insert into Workout_Collection values('Boxingractice For 10 min','test',4.0,4)
+
+select * from Workout_Collection
+
+

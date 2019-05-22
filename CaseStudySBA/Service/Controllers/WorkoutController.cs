@@ -17,6 +17,14 @@ namespace Service.Controllers
             return Ok(objcontext.Workout_Collection.ToList());
         }
 
+        public IHttpActionResult Get(int id)
+        {
+            var data = objcontext.Workout_Collection.Find(id);
+            return Ok(data);
+        }
+
+
+
         public IHttpActionResult Post(Workout_Collection obj)
         {
             objcontext.Workout_Collection.Add(obj);

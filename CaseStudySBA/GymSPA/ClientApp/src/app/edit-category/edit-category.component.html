@@ -1,16 +1,17 @@
-<form novalidate [formGroup]="frmCat" class="form-inline" >
+<form novalidate [formGroup]="frmCat" class="form-inline">
 
+ 
 
   <div class="form-group">
 
-    <input type="text" name="category_name" id="category_name" formControlName="category_name" class="form-control" disabled [ngClass]="{'is-valid':f.category_name.valid,'is-invalid':f.category_name.invalid &&f.category_name.dirty}" placeholder="Category Name" />
+    <input type="text" name="category_name" id="category_name" formControlName="category_name" class="form-control" disabled [ngClass]="{'is-valid':f.category_name.valid,'is-invalid':f.category_name.invalid &&f.category_name.dirty}" />
     <div *ngIf="f.category_name.invalid && f.category_name.dirty&&f.category_name.error?.required" class="invalid-feedback">
       category_name is required
     </div>
 
-    <button type="button" class="btn btn-primary " style="margin-left:5px" (click)="Enable()" [hidden]="click">Edit</button>
-    <button type="button" class="btn btn-success" style="margin-left:5px" (click)="saveForm(frmCat)" [hidden]="!click">Update</button>
+    <button type="button" class="btn btn-primary " style="margin-left:5px" (click)="Enable()" [hidden]="editing">Edit</button>
+    <button type="button" class="btn btn-success" style="margin-left:5px" (click)="saveForm(frmCat)" [hidden]="!editing">Update</button>
     <button type="button" class="btn btn-danger" style="margin-left:5px" (click)="deleteForm(frmCat)">Delete</button>
-</div>
+  </div>
 
 </form>

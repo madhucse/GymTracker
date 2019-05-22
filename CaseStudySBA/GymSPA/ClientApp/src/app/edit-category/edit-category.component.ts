@@ -10,7 +10,7 @@ import { Category } from '../Category';
 })
 
 export class EditCategoryComponent implements OnInit {
-  public click: boolean = false;
+  public editing: boolean = false;
   frmCat: FormGroup;
   @Output() EditAdded = new EventEmitter<Category>();
   @Output() Deleted = new EventEmitter<Category>();
@@ -26,13 +26,13 @@ export class EditCategoryComponent implements OnInit {
     this.frmCat = this.fb.group({
       category_name: new FormControl(this.NameAdd.category_name, [Validators.required, Validators.minLength(3)])
     });
-    console.log(this.NameAdd);
+    
   }
 
   public Enable(): void {
     
     this.f.category_name.enable();
-    this.click = true;
+    this.editing = true;
   }
 
  
@@ -43,7 +43,7 @@ export class EditCategoryComponent implements OnInit {
       let Cat = new Category(this.NameAdd.category_id, frm.value.category_name);
       this.EditAdded.emit(Cat);
       this.f.category_name.disable();
-      this.click = false;
+      this.editing = false;
     }
   }
 

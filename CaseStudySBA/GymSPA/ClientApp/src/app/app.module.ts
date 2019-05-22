@@ -21,6 +21,7 @@ import { ListWorkoutComponent } from './list-workout/list-workout.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
 import { WorkoutService } from './workout.service';
 import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -42,7 +43,8 @@ import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
     Filterpipe,
     ListWorkoutComponent,
     AddWorkoutComponent,
-    EditWorkoutComponent
+    EditWorkoutComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -52,7 +54,7 @@ import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'list-Category', component:ListCategoryComponent },
+      { path: 'Category', component:ListCategoryComponent },
       { path: 'delete-Category/:id', component: DeleteCategoryComponent},
       { path: 'add-Category', component: AddCategoryComponent},
       { path: 'edit-Category', component: EditCategoryComponent},
@@ -60,12 +62,14 @@ import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
       { path: 'list', component: ListComponent },
       { path: 'edit-workout', component: EditWorkoutComponent },
       { path: 'add-workout', component: AddWorkoutComponent },
-      { path: 'list-workout', component: ListWorkoutComponent },
+      { path: 'Workout', component: ListWorkoutComponent },
+      { path: 'edit/:id', component: EditComponent },
       { path: '', redirectTo: 'list-Category', pathMatch: 'full' }
 
     ])
   ],
   providers: [CategoryService,WorkoutService],
   bootstrap: [AppComponent]
+ 
 })
 export class AppModule { }

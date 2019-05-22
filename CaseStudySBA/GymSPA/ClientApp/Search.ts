@@ -8,7 +8,7 @@ export class Filterpipe implements PipeTransform {
       return category;
     }
     else {
-      return category.filter(item => item.category_name.toLowerCase() == searchTerm);
+      return category.filter(item => item.category_name.toLowerCase().startsWith(searchTerm.toLowerCase()));
     }
   }
 }

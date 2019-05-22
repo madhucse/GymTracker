@@ -6,7 +6,7 @@
       <hr/>
       <div *ngFor="let work of workout | filter: work">
 
-        <app-edit-workout [WorkoutAdd]="work" (EditWorkout)="Edited($event)"> </app-edit-workout>
+        <app-edit-workout [WorkoutAdd]="work" (EditWorkout)="Edited($event)" (DeleteWorkout)="Delete($event)"> </app-edit-workout>
 
         <hr />
       </div>

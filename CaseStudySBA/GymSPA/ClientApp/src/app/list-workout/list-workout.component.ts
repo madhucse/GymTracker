@@ -14,7 +14,7 @@ export class ListWorkoutComponent implements OnInit {
 
   ngOnInit() {
     this.service.getAll().subscribe(
-      (data) => this.workout= data,
+      (data) => this.workout = data,
       (error) => alert('error processsing request')
     );
   }
@@ -27,4 +27,10 @@ export class ListWorkoutComponent implements OnInit {
 
   }
 
+  Delete($event) {
+    this.service.delete($event.workout_id).subscribe(
+      (data) => alert('deleted'),
+      (error) => alert('Failed to Delete'));
+  }
 }
+
