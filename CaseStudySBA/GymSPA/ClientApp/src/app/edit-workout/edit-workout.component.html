@@ -11,9 +11,10 @@
   </div>
   <div class="  form-group form-inline">
     <a [routerLink]="['/edit',WorkoutAdd.workout_id]" class="btn btn-primary">Edit</a>
-    
     <button type="button" class="btn btn-danger" style="margin-left:10px" (click)="deleteForm(frmCat)">Delete</button>
-    <button type="button" class="btn btn-success" style="margin-left:10px">Start</button>
-    <button type="button" class="btn btn-danger" style="margin-left:10px">End</button>
+    <a [routerLink]="['/start']" class="btn btn-success" style="margin-left:10px">Start</a>
+    <a [routerLink]="['/end']" class="btn btn-danger" style="margin-left:10px">End</a>
+
+
   </div>
 </form>

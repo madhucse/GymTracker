@@ -22,6 +22,8 @@ import { AddWorkoutComponent } from './add-workout/add-workout.component';
 import { WorkoutService } from './workout.service';
 import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
 import { EditComponent } from './edit/edit.component';
+import { StartComponent } from './start/start.component';
+import { EndComponent } from './end/end.component';
 
 
 
@@ -44,7 +46,9 @@ import { EditComponent } from './edit/edit.component';
     ListWorkoutComponent,
     AddWorkoutComponent,
     EditWorkoutComponent,
-    EditComponent
+    EditComponent,
+    StartComponent,
+    EndComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -63,6 +67,8 @@ import { EditComponent } from './edit/edit.component';
       { path: 'edit-workout', component: EditWorkoutComponent },
       { path: 'add-workout', component: AddWorkoutComponent },
       { path: 'Workout', component: ListWorkoutComponent },
+      { path: 'start', component: StartComponent },
+      { path: 'end', component: EndComponent },
       { path: 'edit/:id', component: EditComponent },
       { path: '', redirectTo: 'list-Category', pathMatch: 'full' }
 
