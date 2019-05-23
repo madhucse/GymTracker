@@ -11,8 +11,8 @@
 
   <div class="form-group">
     <label>Comment</label>
-    <textarea type="text" name="comment" id="comment" formControlName="comment" class="form-control" [ngClass]="{'is-valid':f.Note.valid,'is-invalid':f.Note.invalid &&f.Note.dirty}"></textarea>
-    <div *ngIf="f.Note.invalid && f.Note.dirty&&f.Note.error?.required" class="invalid-feedback">
+    <textarea type="text" name="comment" id="comment" formControlName="Comment" class="form-control" [ngClass]="{'is-valid':f.Comment.valid,'is-invalid':f.Comment.invalid && f.Comment.dirty}"></textarea>
+    <div *ngIf="f.Comment.invalid && f.Comment.dirty && f.Comment.error?.required" class="invalid-feedback">
       Note is required
     </div>
   </div>

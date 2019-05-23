@@ -24,6 +24,7 @@ import { EditWorkoutComponent } from './edit-workout/edit-workout.component';
 import { EditComponent } from './edit/edit.component';
 import { StartComponent } from './start/start.component';
 import { EndComponent } from './end/end.component';
+import { Filterpipes } from '../../searchwork';
 
 
 
@@ -41,7 +42,7 @@ import { EndComponent } from './end/end.component';
     FindCategoryComponent,
     DeleteCategoryComponent,
     ListComponent,
-   
+    Filterpipes,
     Filterpipe,
     ListWorkoutComponent,
     AddWorkoutComponent,
